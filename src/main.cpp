@@ -1,12 +1,13 @@
 #include "task.h"
 #include "assignment.h"
 #include <vector>
+#include <iostream>
 
 int main(){
 
 	std::vector<Task> all_tasks;
 
-	Task A ("A",3,5);
+	Task A ("A",5,5);
 	Task B ("B",4,7);
 	Task C ("C",2,4);
 	Task D ("D",2,3);
@@ -18,17 +19,29 @@ int main(){
 	all_tasks.push_back(D);
 	all_tasks.push_back(E);
 
+
+
+	//std::cout<<"Tag "     <<A.tag<<std::endl;
+	//std::cout<<"duration "<<A.duration<<std::endl;
+	//std::cout<<"deadline "<<A.deadline<<std::endl;
+	//std::cout<<"endtime " <<A.end_time<<std::endl;
+
+	
 	Assignment assignment;
-	Assignment test2;
 
-	assignment.pending_tasks = all_tasks;
+	assignment.add_task(A);
 
-	assignment.make_next_states();
+	assignment.calc_score();
 
-	test2 = *assignment.next_states[1];
+	std::cout << assignment.delay_score << std::endl;
 
-	test2.make_next_states();
+	/*
+	assignment.show();
 
-	test2.show_next();
+	assignment.calc_score();
+
+	std::cout << assignment.delay_score << std::endl;
+	*/
+
 
 }

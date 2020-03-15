@@ -17,7 +17,10 @@ public:
 	int delay_score;
 
 	void calc_score();
-	void add_task(Task);
+
+	//adds a task to the assignment
+	//attention: doesn't removes pending tasks
+	void add_task(Task&);
 
 	void make_next_states();
 
