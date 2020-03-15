@@ -6,11 +6,11 @@ int main(){
 
 	std::vector<Task> all_tasks;
 
-	Task A (3,5);
-	Task B (4,7);
-	Task C (2,4);
-	Task D (2,3);
-	Task E (5,10);
+	Task A ("A",3,5);
+	Task B ("B",4,7);
+	Task C ("C",2,4);
+	Task D ("D",2,3);
+	Task E ("E",5,10);
 
 	all_tasks.push_back(A);
 	all_tasks.push_back(B);
@@ -19,9 +19,16 @@ int main(){
 	all_tasks.push_back(E);
 
 	Assignment assignment;
+	Assignment test2;
 
 	assignment.pending_tasks = all_tasks;
 
 	assignment.make_next_states();
+
+	test2 = *assignment.next_states[1];
+
+	test2.make_next_states();
+
+	test2.show_next();
 
 }

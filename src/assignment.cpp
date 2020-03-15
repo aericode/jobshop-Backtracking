@@ -1,5 +1,6 @@
 #include "assignment.h"
 #include <vector>
+#include <iostream>
 
 Assignment::Assignment(){}
 
@@ -27,6 +28,7 @@ void Assignment::add_task(Task task){
 void Assignment::make_next_states(){
 	//cria uma cópia do vetor de tarefas pendentes (para manter intacto o atual)
 	//deleta o copiado de trás pra frente e cria Assignments filhos atualizando suas tarefas e pendências
+
 	std::vector<Task> pending_tasks_cpy;
 	pending_tasks_cpy = this->pending_tasks;
 
@@ -35,6 +37,9 @@ void Assignment::make_next_states(){
 
 	//numero de estados a ser gerado na próxima iteração
 	int num_next = pending_tasks_cpy.size();
+
+
+	next_states.resize(num_next);
 
 	//Auxiliar para criação de tarefas
 	Assignment* created_assig;
@@ -78,5 +83,26 @@ void Assignment::make_next_states(){
 }
 
 void Assignment::show(){
+	std::cout << "[ ";
+	for (std::list<Task>::iterator it=task_list.begin(); it != task_list.end(); it++){
+		std::cout << it->tag;
+		if(it != task_list.end() )std::cout<<" ";
+	}
+	std::cout << ']' << std::endl;
+}
+
+void Assignment::show_next(){
+	int num_show = next_states.size();
+
+	if(num_show==0){
+		std::cout<<"no next generated states in list"<<std::endl;
+
+	}else{
+
+		for(int i=0;i < num_show;i++){
+			std::cout << "next_state["<< i << "]: ";
+			next_states[i]->show();
+		}
+	}
 
 }

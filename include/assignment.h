@@ -21,8 +21,8 @@ public:
 
 	void make_next_states();
 
-	//TODO
 	void show();
+	void show_next();
 
 	Assignment();
 };
