@@ -8,7 +8,7 @@
 class Assignment{
 public:
 
-	std::list<Task> task_list;
+	std::list<Task*> task_list;
 
 	std::vector<Task> pending_tasks;	
 	std::vector<Assignment*> next_states;
@@ -20,7 +20,7 @@ public:
 
 	//adds a task to the assignment
 	//attention: doesn't removes pending tasks
-	void add_task(Task&);
+	void add_task(Task);
 
 	void make_next_states();
 
