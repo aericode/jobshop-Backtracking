@@ -8,6 +8,7 @@ public:
 	int end_time;
 
 	Task();
+	Task(int, int);
 	Task(const Task&);
 };
 

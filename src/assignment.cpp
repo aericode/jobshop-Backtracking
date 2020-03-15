@@ -77,3 +77,6 @@ void Assignment::make_next_states(){
 
 }
 
+void Assignment::show(){
+
+}
