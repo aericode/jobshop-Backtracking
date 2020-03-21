@@ -7,7 +7,7 @@ int main(){
 
 	std::vector<Task> all_tasks;
 
-	Task A ("A",5,5);
+	Task A ("A",4,5);
 	Task B ("B",4,7);
 	Task C ("C",2,4);
 	Task D ("D",2,3);
@@ -30,6 +30,7 @@ int main(){
 	Assignment assignment;
 
 	assignment.add_task(A);
+	assignment.add_task(B);
 
 	assignment.calc_score();
 
