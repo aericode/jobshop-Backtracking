@@ -1,5 +1,6 @@
 #include "task.h"
 #include "assignment.h"
+#include "tree.h"
 #include <vector>
 #include <iostream>
 
@@ -19,30 +20,12 @@ int main(){
 	all_tasks.push_back(D);
 	all_tasks.push_back(E);
 
-
-
-	//std::cout<<"Tag "     <<A.tag<<std::endl;
-	//std::cout<<"duration "<<A.duration<<std::endl;
-	//std::cout<<"deadline "<<A.deadline<<std::endl;
-	//std::cout<<"endtime " <<A.end_time<<std::endl;
-
 	
 	Assignment assignment;
 
-	assignment.add_task(A);
-	assignment.add_task(B);
 
-	assignment.calc_score();
+	assignment.pending_tasks = all_tasks;
 
-	std::cout << assignment.delay_score << std::endl;
-
-	/*
-	assignment.show();
-
-	assignment.calc_score();
-
-	std::cout << assignment.delay_score << std::endl;
-	*/
 
 
 }

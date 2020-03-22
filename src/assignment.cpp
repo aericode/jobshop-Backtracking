@@ -97,6 +97,10 @@ void Assignment::make_next_states(){
 
 }
 
+int Assignment::get_num_next_states(){
+	return next_states.size();
+}
+
 void Assignment::show(){
 	std::cout << "[ ";
 	for (std::list<Task*>::iterator it=task_list.begin(); it != task_list.end(); it++){
@@ -119,5 +123,8 @@ void Assignment::show_next(){
 			next_states[i]->show();
 		}
 	}
+}
 
+bool Assignment::is_leaf(){
+	return pending_tasks.size() == 0;
 }

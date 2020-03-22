@@ -16,6 +16,8 @@ public:
 
 	int delay_score;
 
+	int get_num_next_states();
+
 	void calc_score();
 
 	//adds a task to the assignment
@@ -26,6 +28,8 @@ public:
 
 	void show();
 	void show_next();
+
+	bool is_leaf();
 
 	Assignment();
 };
