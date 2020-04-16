@@ -5,7 +5,7 @@
 #include <iostream>
 
 int main(){
-
+    /*
 	std::vector<Task> all_tasks;
 
 	Task A ("A",4,5);
@@ -25,6 +25,15 @@ int main(){
 
 
 	assignment.pending_tasks = all_tasks;
+    */
+    
+    Tree tree;
+    tree.init_from_file();
+
+	//tree.root = assignment;
+	tree.seek(&tree.root);
+
+	tree.current_best_assignment->show();
 
 
 

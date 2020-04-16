@@ -11,10 +11,6 @@ void Assignment::calc_score(){
 	delay_score = 0;
 	int delta;
 	for (std::list<Task*>::iterator it=task_list.begin(); it != task_list.end(); ++it){
-		std::cout<<"calc report:"<<std::endl;
-		std::cout<<"Tag "<<(*it)->tag<<std::endl;
-		std::cout<<"deadline "<<(*it)->deadline<<std::endl;
-		std::cout<<"endtime " <<(*it)->end_time<<std::endl;
 		delta = (*it)->end_time - (*it)->deadline;
 		delay_score += std::max(0, delta);
 	}
@@ -31,12 +27,6 @@ void Assignment::add_task(Task task){
 		to_add->end_time = last->end_time + to_add->duration;
 		task_list.push_back(to_add);
 	}
-
-
-	std::cout<<"add report"<<std::endl;
-	std::cout<<"Tag "     <<to_add->tag<<std::endl;
-	std::cout<<"deadline "<<to_add->deadline<<std::endl;
-	std::cout<<"endtime " <<to_add->end_time<<std::endl;
 
 }
 

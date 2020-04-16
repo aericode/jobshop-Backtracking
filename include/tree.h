@@ -12,7 +12,8 @@ public:
 	
 	Tree();
 
-	void initialize();
+	//void initialize();
+    void init_from_file();
 	void seek(Assignment*);
 
 
